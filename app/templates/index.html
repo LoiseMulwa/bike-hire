@@ -1,0 +1,49 @@
+{% extends 'base.html'%} {% block styles %} {{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> {% endblock %}
+<title>{{title}}</title>
+
+{% block content%} 
+<br><br><br>
+<div class="row container" id="slogan">
+    <div class="col-md-8">
+        <h1 style="color:white;font-size:80px;">Hire A Bike,</h1>
+        <h1 style="color:white;font-size:80px;">Enjoy The Ride.</h1>
+    </div>
+    <div class="col-md-4">
+        <p style="color:white ;font-size:20px;">"You either love spinning the pedals and watching scenery whiz by, or you don't.
+            And if you love it, not much can sour you on the idea of riding your bike."</p>
+            <a href="/new_bike"><button  style='margin-right:16px'type="button" class="btn btn-light">POST A BIKE</button></a> 
+            <a href="/bikes"><button type="button" class="btn btn-success">HIRE A BIKE</button></a> 
+    </div>
+    </div><br><br><br>
+    <div class="row container" id=""  align="center">
+        <div class="col-md-4">
+            <img src="../static/photos/BIKE2.jpeg" class="bike" alt="" srcset="">
+        </div>
+        <div class="col-md-4">
+            <img src="../static/photos/BIKE4.jpeg" class="bike" alt="" srcset="">
+        </div>
+        <div class="col-md-4">
+            <img src="../static/photos/BIKE3.jpeg" class="bike" alt="" srcset="">
+        </div>
+    </div><br><br><br><br>
+    <div class="row container" id=""  align="center">
+        <div class="col-md-6">
+            <p style="color:white ;font-size:20px;">Email: bikehire@gmail.com</p>
+            <p style="color:white ;font-size:20px;">Tel no: 09876456564654</p>
+        </div>
+        <div class="col-md-6">
+            <i style="color:white; margin-right:60px" class="fa-brands fa-twitter fa-3x"></i>
+            <i style="color:white;margin-right:60px" class="fa-brands fa-facebook fa-3x"></i>
+            <i style="color:white;" class="fa-brands fa-instagram fa-3x"></i>
+        </div>
+    </div>
+    <div class="row container" id=""  align="center" style="margin-bottom:40px; margin-top:40px" >
+        <div class="col-md-12">
+    <p style="color:white ;font-size:20px;">All rights reserved 2022 BIKE HIRE</p>
+        </div>
+    </div>
+
+</body>
+
+{% endblock %}

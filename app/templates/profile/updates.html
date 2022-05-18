@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/profile.css')}}"> 
+{% endblock %}
+
+{% block content %}
+<br><br><br>
+<div class="container">
+  {{wtf.quick_form(update_form)}}
+</div>
+{% endblock %}
