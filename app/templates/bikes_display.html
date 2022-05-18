@@ -1,0 +1,5 @@
+{% extends 'base.html' %} {% from 'display_macro.html' import display_bikes %} {% from 'reviews_macro.html' import display_reviews %} {% block content %}
+
+<div class="card-footer">{{display_reviews(reviews)}}</div>
+<div class="card-footer">{{display_bikes(bikes)}}</div>
+{% endblock %}

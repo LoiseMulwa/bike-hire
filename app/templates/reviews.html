@@ -1,0 +1,20 @@
+{% extends 'base.html'%} {% from 'reviews_macro.html' import display_reviews%} {% import 'bootstrap/wtf.html' as wtf %} {% block styles %} {{super()}}
+<title>{{title}}</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}"> {% endblock %} {% block content %}
+<div class="container-fluid"><br><br>
+    <div>
+        <a href="/catalogue"><button class="btn btn-primary">Hire Bike </button></a>
+    </div><br><br><br><br><br>
+    <div class="row col-md-12">
+        <div class="col-md-4">
+            <div class="text-black">{{wtf.quick_form(ReviewForm)}}</div>
+        </div>
+        <div class="col-md-8">
+            <h4 class="text-center text-black">Reviews:</h4>
+            <p>{{display_reviews(reviews)}}</p>
+
+        </div>
+    </div>
+
+</div>
+{% endblock%}

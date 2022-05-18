@@ -1,0 +1,26 @@
+{% macro display_bikes(bikes) %} 
+<link rel="stylesheet" type="text/css" href="static/css/index.css">
+<title>{{title}}</title>
+<br><br>
+<a href="/new_bike"><button class="btn btn-primary" id="bt">Post a Bike</button></a>
+<br><br>
+
+<div class="container">
+    <div class="card-columns">
+        {% if bikes %} {% for my_bikes in bikes %}
+        <div class="card">
+            <div class="card-body" text-center>
+                <img class="card" src="{{url_for('static',filename=user.bike_pic_path)}}" alt="" class="img-thumbnail" height=50%>   
+            </div>
+            <div class="card-footer foot_flex d-block mx-auto">
+                <p>{{category}}</p> 
+                <a href="/review/{{my_bike.id}}"><i class="fa fa-comment" aria-hidden="true"></i>REVIEWS</button></a>
+                <button id="hire"> HIRE BIKE </button></a>
+            </div>
+        </div>
+        {% endfor %} {% endif %}
+    </div>
+    
+</div>
+{% endmacro %}
+

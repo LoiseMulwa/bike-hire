@@ -1,0 +1,20 @@
+{% macro display_reviews(reviews) %} {%for review in reviews %} {%endfor%}
+<title>{{title}}</title>
+<div class="container">
+</div>
+
+<div class="card-rows">
+  {% for review in reviews %}
+  <div class="card">
+    <div class="card-header">
+      <p class="text-center">{{review.bike.title}}</p>
+    </div>
+    <div class="card-body">
+      <p>{{review.review}}</p>
+    </div>
+  </div>
+</div>
+
+
+{%endfor%}
+{%endmacro%}

@@ -1,0 +1,58 @@
+{% extends 'base.html'%}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/profile.css')}}"> 
+{% endblock %}
+
+{% block content %}
+{% if user == current_user %}
+
+{% endif %}
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <!-- displaying  Username-->
+    <div class="col-md-4">
+      <h3>{{user.username| capitalize}} </h3>
+      <br>
+      <hr>
+      <a href="{{url_for('main.update_profile',username=user.username)}}">Edit profile</a><br>
+      <!--Displaying user bio-->
+      {% if user.bio %}
+      <br>
+      <h4>{{user.bio}}</h4>
+      {%else%}
+      <br>
+      <p> {{user.username| capitalize}} has no bio </p>
+      {% endif %}
+    </div>
+
+    <!--Display profile photo-->
+    <div class="col-md-8">
+      {% if user.profile_pic_path %}
+
+      <div class="card">
+         <img class="card" src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail" height=35% width=35%>
+      </div>
+      <div class="row">
+        {%else%}
+
+        <h3><strong>No profile picture</strong></h3>
+
+        {% endif %}
+
+        {% if user == current_user %}
+        <form action="{{url_for('main.update_pic',username=user.username)}}" method="post" enctype="multipart/form-data">
+          <br>
+          <input type="file"  name="photo" class="form-control" required>
+          <br>
+          <input type="submit">
+        </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
