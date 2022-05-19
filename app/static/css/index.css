@@ -1,0 +1,21 @@
+body{
+    background-color: #000000;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+h1 {
+    color: white;
+    font-size: 80px;
+}
+p {
+    color:white;
+    font-size: 20px;
+}
+#icon {
+    color: white;
+    margin-right: 60px;
+}
+#footer {
+    margin-top: 40px;
+    margin-bottom: 40px;}
