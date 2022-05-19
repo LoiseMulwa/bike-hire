@@ -1,0 +1,10 @@
+body{
+    background-image: url('../photos/back_3.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+
+bike_form{
+    padding-top: 40px;
+}
